@@ -37,7 +37,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        gci $env:APPDATA\NuGet\
+        gc $env:APPDATA\NuGet\nuget.config
         dotnet restore
     - name: Build
       run: dotnet build --no-restore -c Release
