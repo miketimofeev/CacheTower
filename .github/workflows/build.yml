@@ -27,6 +27,7 @@ jobs:
       run: |
          gci $env:APPDATA\NuGet\
          choco install Memurai-Developer
+         gci $env:APPDATA\NuGet\
     - name: Configure Ubuntu
       if: matrix.os == 'ubuntu-latest'
       run: sudo systemctl start mongod && sudo apt-get install redis-server
