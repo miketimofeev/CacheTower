@@ -6,11 +6,11 @@ on:
 
 env:
   # Disable the .NET logo in the console output.
-  DOTNET_NOLOGO: true
+  #DOTNET_NOLOGO: true
   # Disable the .NET first time experience to skip caching NuGet packages and speed up the build.
-  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  #DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   # Disable sending .NET CLI telemetry to Microsoft.
-  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  #DOTNET_CLI_TELEMETRY_OPTOUT: true
 
   BUILD_ARTIFACT_PATH: ${{github.workspace}}/build-artifacts
 
@@ -37,7 +37,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        gc $env:APPDATA\NuGet\nuget.config
+        gci $env:APPDATA\NuGet\
         dotnet restore
     - name: Build
       run: dotnet build --no-restore -c Release
